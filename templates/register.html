@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript form validation</title>
+    <link rel="stylesheet" href="{% static 'stylesignup.css' %}">
+
+  </head>
+  <body>
+   <div class="main">
+    <div>
+      {% for message in messages %}
+      <h3>
+        {{message}}
+      </h3>
+      {% endfor %}
+    </div>
+    <br>
+    <form action="register" id="register" name="myForm" onsubmit="return validateForm()" method="POST">
+        {% csrf_token %}
+
+      <div class="mainform">
+        <div class="formdesign" id="name">
+            <label for="">Name:</label><br>
+            <input type="text" name="first_name" placeholder="Enter Your First Name" required/>
+            <b><span class="formerror"></span></b>
+          </div>
+          <br>
+
+          <div class="formdesign" id="name">
+            <label for="">Name:</label><br>
+            <input type="text" name="last_name" placeholder="Enter Your last Name" required/>
+            <b><span class="formerror"></span></b>
+          </div>
+          <br>
+
+          <div class="formdesign" id="username">
+            <label for="">username:</label><br>
+            <input type="text" name="username" placeholder="Username" required/>
+            <b><span class="formerror"></span></b>
+          </div>
+          <br>
+    
+          <div class="formdesign" id="email">
+            <label for="">Email:</label><br>
+            <input type="email" name="email" placeholder="abc@gmail.com" required />
+            <b><span class="formerror"></span></b>
+          </div>
+          <br>
+    
+
+    
+          <div class="formdesign" id="pass">
+            <label for="">Password:</label><br>
+            <input type="password" name="password1" placeholder="Minimum 8 characters" required />
+            <b><span class="formerror"></span></b>
+          </div>
+          <br>
+    
+          <div class="formdesign" id="cpass">
+            <label for="">Confirm Password:</label><br>
+            <input type="password" name="password2" required/>
+            <b><span class="formerror"></span></b>
+          </div>
+          <br>
+    
+          <input type="submit" class="btn" value="SIGNUP">
+    
+      </div>
+    </form>
+    
+   </div>
+  </body>
+
+  <script>
+    function seterror(id, error){
+        element = document.getElementById(id);
+        element.getElementsByClassName('formerror')[0].innerHTML = error;
+
+    }
+    function clearErrors(){
+        errors = document.getElementsByClassName('formerror');
+        for(item of errors){
+            item.innerHTML = "";
+        }
+    }
+
+    
+
+    function validateForm(){
+        var returnval = true;
+        clearErrors();
+    
+        var email = document.forms['myForm']["femail"].value;
+        if(email.length<5){
+            seterror("email","*Length of email is too short");
+            returnval = false;
+        }
+
+        var phone = document.forms['myForm']["fphone"].value;
+        if(phone.length!=10){
+            seterror("phone","*Length of phone number should be 10");
+            returnval = false;
+        }
+
+        var password = document.forms['myForm']["fpass"].value;
+        if(password.length<8){
+            seterror("pass","*password should be atleast 8 characters long");
+            returnval = false;
+        }
+
+        var cpassword = document.forms['myForm']["fcpass"].value;
+        if(cpassword!=password){
+            seterror("cpass","*Paasword and Confirm Password should match");
+            returnval = false;
+        }
+        return returnval;
+    }
+
+  </script>
+</html>

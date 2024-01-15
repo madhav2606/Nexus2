@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-image: url('https://th.bing.com/th/id/OIP.gZ3kCMDxmq8yKSTXdi8NWgHaEK?w=289&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7');
+    /* background-position: -400px 0; */
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.main{
+    width: 400px;
+    /* margin:  10% 35% ; */
+    margin: 20% auto;
+    /* background-color: #bbdb5c7d;
+     */
+    background-image: linear-gradient(to right, rgb(71, 111, 128),rgba(53, 28, 141, 0.427));
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+    border-radius: 20px;
+}
+h1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    
+}
+.formerror{
+    color: rgb(141, 0, 0);
+    font-weight: 1;
+    display: flex;
+    position: relative;
+    left: 5px;
+    font-size: .9rem;
+}
+
+.mainform input{
+    border-radius: 20px;
+    background-color: rgba(120, 246, 255, 0.146);
+    font-size: 1.1rem;
+    animation-name: moveinright;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    height: 30px;
+    width: 95%;
+    padding-left: 15px;
+    border: 2px solid rgba(118, 118, 118, 0.55);
+    color: rgb(243, 243, 243);
+}
+
+::placeholder{
+    color: rgba(255, 255, 255, 0.395);
+}
+.mainform input:hover{
+    /* background-color: rgb(235, 239, 174); */
+    
+    transform: scale(1.05);
+    /* font-size: .9rem; */
+    transition: .2s ease-in-out;
+    
+}
+.mainform input:focus{
+    outline: 2px solid rgb(20, 22, 65);
+    background-color: rgba(65, 104, 129, 0.381);
+    /* color: white; */
+    /* font-weight: bold; */
+}
+
+.mainform label{
+    position: relative;
+    left: 8px;
+    top: 10px;
+    animation-name: moveinleft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* color: #090301; */
+    font-weight: bold;
+    color: rgb(168, 240, 246);
+    /* text-align: start; */
+    display: flex;
+}
+
+.mainform .btn{
+    animation-name: moveupwards;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    height: 40px;
+    width: auto;
+    padding: 0.5rem ;
+    white-space: nowrap;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    text-transform: uppercase;
+    border-radius: 20px;
+    color: rgb(168, 240, 246)
+
+    /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
+}
+.mainform .btn:hover{
+    color: white;
+    background-color: #675b86;
+}
+
+.btn:hover{
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+    /* first value is in x direction offest , second is in y direction and third is the blur value */
+}
+
+
+
+
+
+@keyframes moveupwards{
+    0%{
+        opacity: 0;
+        transform: translateY(3rem);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+
+    }
+}
+
+
+@keyframes moveinleft{
+    0%{
+        opacity: 0;
+
+        transform: translateX(-10rem);
+
+    }
+
+    80%{
+        transform: translateX(1.75rem);
+    }
+    100%{
+
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveinright{
+    0%{
+        opacity: 0;
+
+        transform: translateX(10rem);
+
+    }
+
+    80%{
+        transform: translateX(-1rem);
+    }
+    100%{
+
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@media screen and (max-width:850px) {
+    body{
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size:cover;
+        
+    }
+    .mainform input{
+        font-size: .9rem;
+        height: 22px;
+    }
+    .mainform label{
+        font-size: .9rem;
+    }
+
+    .main{
+        margin: 30% auto;
+        width: 50%;
+        
+    }
+    .mainform .btn{
+        font-size: .9rem;
+    }
+
+}

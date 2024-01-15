@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>restraunt website</title>
+    <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' %}" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+    <nav class = "NavbarItems">
+        <h1 class ="navbar-logo">FlavorFusion</h1>
+        <div class="openMenu">
+            <i class="fa fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-links"><a href="/">HOME</a></li>
+            <li class="nav-links"><a href="accounts/register">REGISTER</a></li>
+            <!-- <li><a href="accounts/register">REGISTER</a></li> -->
+            <li class="nav-links"><a href="accounts/login">LOGIN</a></li> 
+            <!-- <li><a href="accounts/login">LOGIN</a></li> -->
+            <div class="closeMenu">
+                <i class="fa fa-times"></i>
+            </div>
+        </ul>
+        
+    </nav>
+
+     <div class="hero-text">
+            <h2>
+                Where flavor meets finesse
+            </h2>
+            <a href="/" class="show">ORDER NOW</a>
+    </div>
+    <script src="{% static './app.js' %}"></script>
+    
+</body>
+
+
+</html>

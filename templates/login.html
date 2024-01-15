@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'stylelogin.css' %}">
+</head>
+<body>
+    <div class="main">
+      <div>
+        {% for message in messages %}
+        <h3>
+          {{message}}
+        </h3>
+        {% endfor %}
+      </div>
+        <br>
+        <form action='login' id="register" name="myForm" onsubmit="return validateForm()" method="POST">
+          {% csrf_token %}
+    
+          <div class="mainform">
+            <div class="formdesign" id="name">
+                <label for="">Userame:</label><br>
+                <input type="text" name="username" placeholder="Enter Your username" required/>
+                <b><span class="formerror"></span></b>
+              </div>
+              <br>
+        
+        
+              <div class="formdesign" id="pass">
+                <label for="">Password:</label><br>
+                <input type="password" name="password" placeholder="Minimum 8 characters" required />
+                <b><span class="formerror"></span></b>
+              </div>
+              <br>
+        
+              <input type="submit" class="btn" value="LOGIN">
+        
+          </div>
+        </form>
+      
+       </div>
+
+       <script>
+        function seterror(id, error){
+            element = document.getElementById(id);
+            element.getElementsByClassName('formerror')[0].innerHTML = error;
+    
+        }
+        function clearErrors(){
+            errors = document.getElementsByClassName('formerror');
+            for(item of errors){
+                item.innerHTML = "";
+            }
+        }
+    
+        
+    
+        function validateForm(){
+            var returnval = true;
+            clearErrors();
+        
+           
+    
+            var password = document.forms['myForm']["fpass"].value;
+            if(password.length<8){
+                seterror("pass","*password should be atleast 8 characters long");
+                returnval = false;
+            }
+
+            return returnval;
+        }
+       </script>
+</body>
+</html>

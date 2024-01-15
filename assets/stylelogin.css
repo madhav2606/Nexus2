@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-image: url('https://i.pinimg.com/originals/ca/28/99/ca289981862a3aa1a9e457a8baa5f3ca.jpg');
+    /* background-position: -400px 0; */
+    /* background-position: fixed ;
+    top: 0; */
+    /* background-size: cover; */
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    
+}
+.main{
+    width: 400px;
+    /* margin:  10% 35% ; */
+    margin: 30% auto;
+    /* background-color: #bbdb5c7d;
+     */
+    background-image: linear-gradient(to right, rgb(76, 92, 105),rgba(22, 17, 95, 0.427));
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+    border-radius: 20px;
+}
+
+.formerror{
+    color: rgb(151, 145, 145);
+    font-weight: 1;
+    display: flex;
+    position: relative;
+    left: 5px;
+    font-size: .9rem;
+}
+
+.mainform input{
+    color: white;
+    border-radius: 20px;
+    background-color: rgba(189, 189, 193, 0.13);
+    font-size: 1.5rem;
+    animation-name: moveinright;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    height: 30px;
+    width: 95%;
+    padding-left: 15px;
+    border: 2px solid rgba(118, 118, 118, 0.55);
+}
+
+::placeholder{
+    color: rgba(196, 196, 196, 0.566);
+}
+.mainform input:hover{
+    /* background-color: rgb(235, 239, 174); */
+    
+    transform: scale(1.05);
+    /* font-size: .9rem; */
+    transition: .2s ease-in-out;
+    
+}
+
+.mainform label{
+    position: relative;
+    left: 8px;
+    top: 10px;
+    animation-name: moveinleft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* color: #090301; */
+    font-weight: bold;
+    color: rgb(150, 192, 203);
+    /* text-align: start; */
+    display: flex;
+    font-size: 1.5rem;
+    margin-bottom: 1px;
+}
+
+.mainform .btn{
+    animation-name: moveupwards;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    height: 40px;
+    width: auto;
+    margin-top: 10px;
+    padding: 0 1rem;
+    white-space: nowrap;
+    border-radius: 0.3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    text-transform: uppercase;
+    border-radius: 20px;
+    color: rgb(150, 192, 203);
+
+    /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
+}
+.mainform .btn:hover{
+    color: white;
+    background-color: #22769778;
+}
+
+.btn:hover{
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.489);
+    /* first value is in x direction offest , second is in y direction and third is the blur value */
+}
+
+
+
+
+
+@keyframes moveupwards{
+    0%{
+        opacity: 0;
+        transform: translateY(3rem);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+
+    }
+}
+
+
+@keyframes moveinleft{
+    0%{
+        opacity: 0;
+
+        transform: translateX(-10rem);
+
+    }
+
+    80%{
+        transform: translateX(1.75rem);
+    }
+    100%{
+
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveinright{
+    0%{
+        opacity: 0;
+
+        transform: translateX(10rem);
+
+    }
+
+    80%{
+        transform: translateX(-1rem);
+    }
+    100%{
+
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@media screen and (max-width:750px) {
+    body{
+        background-repeat: no-repeat;
+        /* background-size: 400%; */
+        
+        
+    }
+    .mainform{
+        height: auto;
+    }
+    .mainform input{
+        
+        font-size: 1rem;
+        height: 32px;
+    }
+    .mainform label{
+        margin: 2px;
+        font-size: 1rem;
+    }
+
+    .main{
+        
+        margin: 40% auto;
+        width: 50%;
+        
+    }
+    .mainform .btn{
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+
+}
+@media screen and (max-width:350px){
+    .mainform input{
+        
+        font-size: .8rem;
+        height: 32px;
+    }
+}
